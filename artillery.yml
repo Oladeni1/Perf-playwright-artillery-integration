@@ -1,0 +1,22 @@
+config:
+  target: 'https://www.ons.gov.uk/'
+  engines:
+    playwright: {}
+  processor: ./tests/artillery/nwpArtillery.spec.js
+  phases:
+    # 1 user every sec for 10 sec
+    - name: Constant arrivalRate
+      duration: 10
+      arrivalRate: 1
+    # Ramp up user from 10 to 50 for 10 sec
+    - name: Ramp up  arrivalRate
+      duration: 10
+      arrivalRate: 10
+      rampTo: 20
+    # Fixed arrival of 10 user for 10 sec
+    - name: Fixed arrivalRate
+      duration: 10
+      arrivalCount: 10
+scenarios:
+  - engine: playwright
+    testFunction: "artilleryScript"
