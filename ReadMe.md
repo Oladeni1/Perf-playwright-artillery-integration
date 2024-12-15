@@ -42,5 +42,8 @@
 ## To run this artillery test in quite mode without writing output in console but output JSON report:
  Run > artillery run --quiet -o results2.json artillery.yml
 
+## To run this artillery test/ view result in artillery cloud dashboard:,
+ Run > artillery run artillery.yml --name "my-economy-web-test" --record --key a9_Sgkoahg_eM87ocuKvEmMTPpc5qw8Q8c6
+
 ## Framework authour
  Olatunde Oladeni
