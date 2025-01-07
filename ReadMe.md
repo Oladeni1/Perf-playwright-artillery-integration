@@ -3,6 +3,18 @@
 ## To install playwright
  Run > npm install playwright@latest
 
+## To install otpauth
+ Run > npm install otpauth
+
+## To export credentials fot the runtime engine:
+ Run > export HEROKU_EMAIL=olatundeoladeni@yahoo.com
+ Run > export HEROKU_PASSWORD=1@ManchesterOla
+ Run > export HEROKU_SECRET=NB2W45DFOIZA
+
+## To Run test:
+ Run > PWDEBUG=1 npx playwright test heroku2fa.spec.js --headed
+ Run > npx playwright test heroku2fa.spec.js --headed
+
 ## Runs the end-to-end tests.
   Run > npx playwright test
     
