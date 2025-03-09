@@ -1,0 +1,13 @@
+config:
+  target: 'https://www.ons.gov.uk/'
+  engines:
+    playwright: {}
+  processor: ./tests/artillery/nwpArtillery.spec.js
+  phases:
+    # Fixed 2500 users per second
+    - name: # Fixed 2500 users per second
+      duration: 300       #Run test for 5 minutes
+      arrivalCount: 2500   #Fixed 2500 users per second
+scenarios:
+  - engine: playwright
+    testFunction: "artilleryScript"

@@ -1,0 +1,14 @@
+config:
+  target: 'https://www.ons.gov.uk/'
+  engines:
+    playwright: {}
+  processor: ./tests/artillery/nwpArtillery.spec.js
+  phases:
+    # Ramp up arrivalRate of 500 vus for 10mins & ramp up to 2500 vus
+    - name: Ramp up arrivalRate
+      duration: 600       #Run test for 10 minutes
+      arrivalCount: 500   #Start with 500 new users per second
+      rampTo: 2500        #Gradually increase to 2500 users per second
+scenarios:
+  - engine: playwright
+    testFunction: "artilleryScript"
